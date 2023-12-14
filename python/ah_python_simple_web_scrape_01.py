@@ -25,10 +25,10 @@ stock_description = {}
 # iterate over the items and append them to the dictionary
 for item in stock_items:
     item_description = item.find("div", {"class": "mfs7Fc"}).text
+    item_description = item_description.lower()
+    item_description = item_description.replace(" ", "_")
+    print(item_description)
     item_value = item.find("div", {"class": "P6K39c"}).text
-    stock_description[item_description] = item_value
+    stock_description[item_description.lower()] = item_value
 
 print(stock_description)
-
-print("\nHit 'Enter' to close...")
-input()
