@@ -1,0 +1,25 @@
+from PyQt5.QtCore import *
+from PyQt5.QtWebEngineWidgets import *
+from PyQt5.QtWidgets import QApplication
+import sys
+
+qt_app = QApplication(sys.argv)
+
+# Initialize web engine
+web = QWebEngineView()
+
+# Set window title
+web.setWindowTitle("Window Name")
+    
+# set window size
+web.resize(900, 800)
+
+# set window zoom
+web.setZoomFactor(1)
+
+# load the url
+web.load(QUrl("file.html"))
+
+# Show the results
+web.show()
+sys.exit(qt_app.exec())
